@@ -1,0 +1,15 @@
+.env
+dockovpn/bin/
+dockovpn/done.txt
+dockovpn/client/
+dockovpn/build_number.txt
+dockovpn/full_version.txt
+dockovpn/CHANGELOG-draft.md
+dockovpn/tests-report/
+dockovpn/test-reports/
+dockovpn/target
+dockovpn/.vscode/
+dockovpn/ipv6-leack-test.sh
+
+dockovpn/data/clients/*
+# dockovpn/data/pki

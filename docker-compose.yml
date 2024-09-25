@@ -1,0 +1,35 @@
+# First run
+# echo HOST_ADDR=$(curl -s https://api.ipify.org) > .env && docker-compose up -d && docker-compose exec -d dockovpn wget -O /doc/Dockovpn/client.ovpn localhost:8080
+
+version: '3'
+services:
+  dockovpn:
+    image: alekslitvinenk/openvpn
+    container_name: dockovpn
+    cap_add:
+        - NET_ADMIN
+    build: 
+        context: ${SERVER_DIR}
+        dockerfile: Dockerfile
+        args:
+            - HOST_ADDR=${HOST_ADDR} 
+            - HOST_CONF_PORT=${HOST_CONF_PORT}
+            - HOST_TUN_PORT=${HOST_TUN_PORT}
+            - HOST_TUN_PROTOCOL=${HOST_TUN_PROTOCOL}
+    ports:
+        - "${HOST_TUN_PORT}:1194/udp" # Expose tcp if you defined HOST_TUN_PROTOCOL=tcp
+        - "${HOST_CONF_PORT}:8080/tcp"
+    environment:
+        - HOST_ADDR=${HOST_ADDR} 
+        - HOST_CONF_PORT=${HOST_CONF_PORT}
+        - HOST_TUN_PORT=${HOST_TUN_PORT}
+        - HOST_TUN_PROTOCOL=${HOST_TUN_PROTOCOL}
+    volumes:
+        - ${SERVER_DIR}/openvpn_conf:/opt/Dockovpn_data
+    networks:
+      - openvpn-network
+    restart: always
+
+networks:
+  openvpn-network:
+    driver: bridge
