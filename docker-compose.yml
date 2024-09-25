@@ -25,7 +25,7 @@ services:
         - HOST_TUN_PORT=${HOST_TUN_PORT}
         - HOST_TUN_PROTOCOL=${HOST_TUN_PROTOCOL}
     volumes:
-        - ${SERVER_DIR}/openvpn_conf:/opt/Dockovpn_data
+        - ${SERVER_DIR}/data:/opt/Dockovpn_data
     networks:
       - openvpn-network
     restart: always

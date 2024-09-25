@@ -16,6 +16,9 @@ sudo cp -i .env.example .env
 Don't forget to define you vps-ip by replacing `HOST_ADDR` with your vps ip.
 ### ⚒️ Build
 ```
+sudo cp -ir dockovpn/openvpn_conf dockovpn/data 
+```
+```
 docker compose up -d --build
 ```
 ### Generate new client
