@@ -14,4 +14,3 @@ dockovpn/ipv6-leack-test.sh
 dockovpn/openvpn_conf/clients
 dockovpn/openvpn_conf/pki
 dockovpn/openvpn_conf/
-dockovpn/openvpn_conf/pki/index.txt
