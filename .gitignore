@@ -11,5 +11,7 @@ dockovpn/target
 dockovpn/.vscode/
 dockovpn/ipv6-leack-test.sh
 
-dockovpn/data/clients/*
-# dockovpn/data/pki
+dockovpn/openvpn_conf/clients
+dockovpn/openvpn_conf/pki
+dockovpn/openvpn_conf/
+dockovpn/openvpn_conf/pki/index.txt
