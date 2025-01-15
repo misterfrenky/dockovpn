@@ -1,7 +1,3 @@
-### Clone
-```
-git clone https://gitlab.com/my-projects7693331/tulip168/odoo/dockovpn.git
-```
 ### Env
 ```
 sudo cp -i .env.example .env
